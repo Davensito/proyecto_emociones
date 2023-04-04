@@ -1,0 +1,32 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+#EMOCIONES
+
+emocion:
+  path: /emocion/{id_emocion}
+  controller: App\Controller\EmocionesController:emocion
+  methods: [GET]
+
+emociones:
+  path: /emociones
+  controller: App\Controller\EmocionesController:emociones
+  methods: [GET]
+
+#USUARIO
+
+logearUsuario:
+  path: /logearUsuario
+  controller: App\Controller\UsuarioController::logearUsuario
+  methods: [POST]
+
+usuarios:
+  path: /usuarios
+  controller: App\Controller\UsuarioController::usuarios
+  methods: [GET, POST]
+
+usuario:
+  path: /usuario/{id}
+  controller: App\Controller\UsuarioController::usuario
+  methods: [GET, PUT, DELETE]
