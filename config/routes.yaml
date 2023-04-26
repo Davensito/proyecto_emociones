@@ -30,3 +30,18 @@ usuario:
   path: /usuario/{id}
   controller: App\Controller\UsuarioController::usuario
   methods: [GET, PUT, DELETE]
+
+#DATOS
+
+datos:
+  path: /datos/{id}
+  controller: App\Controller\DatosController::datos
+  methods: [GET, POST, DELETE]
+
+#EMOCIONES_USUARIO
+
+info:
+  path: /usuario/{id_usuario}/emocion/{id_emocion}
+  controller: App\Controller\EmocionesUsuarioController::info
+  methods: [GET, POST]
+
