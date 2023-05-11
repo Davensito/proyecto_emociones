@@ -39,6 +39,7 @@ class UsuarioController extends AbstractController{
             $imagen = $request->get("imagen");
             $codigo = $request->get("codigo");
             $correo = $request->get("correo");
+            $tipo = $request->get("tipo");
 
             $usuario = new Usuario();
 
@@ -49,6 +50,7 @@ class UsuarioController extends AbstractController{
             $usuario->setImagen($imagen);
             $usuario->setCodigo($codigo);
             $usuario->setCorreo($correo);
+            $usuario->setTipo($tipo);
 
             $this->getDoctrine()->getManager()->persist($usuario);
             $this->getDoctrine()->getManager()->flush();
@@ -77,6 +79,7 @@ class UsuarioController extends AbstractController{
             $contrasenya = $request->get("contrasenya");
             $codigo = $request->get("codigo");
             $correo = $request->get("correo");
+            $tipo = $request->get("tipo");
 
             if (!empty($nombre))
 
@@ -101,6 +104,10 @@ class UsuarioController extends AbstractController{
             if (!empty($codigo))
 
                 $usuario->setCodigo($codigo);
+
+            if (!empty($tipo))
+
+                $usuario->setTipo($tipo);
 
 
             $this->getDoctrine()->getManager()->persist($usuario);

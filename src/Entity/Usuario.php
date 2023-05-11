@@ -58,6 +58,13 @@ class Usuario
     private $correo;
 
     /**
+     * @var boolean|null
+     * @Groups("usuario")
+     * @ORM\Column(name="tipo", type="boolean", nullable=true)
+     */
+    private $tipo;
+
+    /**
      * @var string|null
      * @Groups("usuario")
      * @ORM\Column(name="codigo", type="string", length=45, nullable=true)
@@ -198,6 +205,23 @@ class Usuario
     {
         $this->imagen = $imagen;
     }
+
+    /**
+     * @return bool|null
+     */
+    public function getTipo(): ?bool
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * @param bool|null $tipo
+     */
+    public function setTipo(?bool $tipo): void
+    {
+        $this->tipo = $tipo;
+    }
+
 
 
 }

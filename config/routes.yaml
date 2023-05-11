@@ -7,12 +7,12 @@
 emocion:
   path: /emocion/{id_emocion}
   controller: App\Controller\EmocionesController:emocion
-  methods: [GET]
+  methods: [GET, PUT, DELETE]
 
 emociones:
   path: /emociones
   controller: App\Controller\EmocionesController:emociones
-  methods: [GET]
+  methods: [GET, POST]
 
 #USUARIO
 
