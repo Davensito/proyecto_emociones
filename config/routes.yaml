@@ -38,6 +38,11 @@ datos:
   controller: App\Controller\DatosController::datos
   methods: [GET, POST, DELETE]
 
+dato:
+  path: /dato
+  controller: App\Controller\DatosController::dato
+  methods: [GET]
+
 #EMOCIONES_USUARIO
 
 info:

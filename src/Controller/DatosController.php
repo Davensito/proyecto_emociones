@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Datos;
-use App\Entity\EmoionesUsuario;
 use App\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -52,6 +51,17 @@ class DatosController extends AbstractController{
         $dato = $serializer->serialize($dato, 'json', ['groups' => ['datos']]);
 
         return new Response($dato);
+
+    }
+
+    public function dato(Request $request, SerializerInterface $serializer) {
+
+        $datos = $this->getDoctrine()->getManager()->getRepository(Datos::class)->findAll();
+
+        $datos = $serializer->serialize($datos, 'json', ['groups' => ['datos']]);
+
+
+        return new Response($datos);
 
     }
 
