@@ -58,13 +58,6 @@ class Usuario
     private $correo;
 
     /**
-     * @var boolean|null
-     * @Groups("usuario")
-     * @ORM\Column(name="tipo", type="boolean", nullable=true)
-     */
-    private $tipo;
-
-    /**
      * @var string|null
      * @Groups("usuario")
      * @ORM\Column(name="codigo", type="string", length=45, nullable=true)
@@ -77,6 +70,14 @@ class Usuario
      * @ORM\Column(name="imagen", type="string", length=255, nullable=true)
      */
     private $imagen;
+
+    /**
+     * @var bool
+     *
+     * @Groups("usuario")
+     * @ORM\Column(name="tipo", type="boolean", nullable=false)
+     */
+    private $tipo = false;
 
     /**
      * @return int
@@ -207,21 +208,18 @@ class Usuario
     }
 
     /**
-     * @return bool|null
+     * @return bool
      */
-    public function getTipo(): ?bool
+    public function isTipo(): bool
     {
         return $this->tipo;
     }
 
     /**
-     * @param bool|null $tipo
+     * @param bool $tipo
      */
-    public function setTipo(?bool $tipo): void
+    public function setTipo(bool $tipo): void
     {
         $this->tipo = $tipo;
     }
-
-
-
 }

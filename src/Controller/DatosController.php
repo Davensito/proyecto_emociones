@@ -60,7 +60,6 @@ class DatosController extends AbstractController{
 
         $datos = $serializer->serialize($datos, 'json', ['groups' => ['datos']]);
 
-
         return new Response($datos);
 
     }
